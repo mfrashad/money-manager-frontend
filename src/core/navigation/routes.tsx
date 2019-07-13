@@ -244,15 +244,8 @@ const SocialNavigationMap: NavigationRouteConfigMap = {
 };
 
 const AuthNavigationMap: NavigationRouteConfigMap = {
-  ['Sign In 1']: SignIn1Container,
   ['Sign In 2']: SignIn2Container,
-  ['Sign In 3']: SignIn3Container,
-  ['Sign In 4']: SignIn4Container,
-  ['Sign In 5']: SignIn5Container,
-  ['Sign Up 1']: SignUp1Container,
   ['Sign Up 2']: SignUp2Container,
-  ['Sign Up 3']: SignUp3Container,
-  ['Sign Up 4']: SignUp4Container,
   ['Forgot Password']: ForgotPasswordContainer,
 };
 
@@ -306,15 +299,15 @@ const LayoutsNavigator: NavigationContainer = createStackNavigator(
 
 const MenuNavigator: NavigationContainer = createBottomTabNavigator({
   ['Layouts']: LayoutsNavigator,
-  ['Components']: ComponentsNavigator,
+  ['Components']: ListContainer,
   ['Themes']: ThemesNavigator,
 }, {
   tabBarComponent: MenuContainer,
 });
 
 const AppNavigator: NavigationContainer = createStackNavigator({
-  ['Home']: MenuNavigator,
   ...AuthNavigationMap,
+  ['Home']:MenuNavigator,
   ...SocialNavigationMap,
   ...ArticlesNavigationMap,
   ...MessagingNavigationMap,
