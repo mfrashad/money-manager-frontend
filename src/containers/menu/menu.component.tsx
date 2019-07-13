@@ -13,7 +13,7 @@ import {
 import {
   ColorPaletteIconOutline,
   LayoutIconOutline,
-  StarIconOutline,
+  ListIconFill,
 } from '@src/assets/icons';
 import { themes } from '@src/core/themes';
 
@@ -41,12 +41,12 @@ class MenuComponent extends React.Component<Props> {
             selectedIndex={selectedIndex}
             onSelect={this.onTabSelect}>
             <BottomNavigationTab
-              title='Layouts'
+              title='Home'
               icon={LayoutIconOutline}
             />
             <BottomNavigationTab
-              title='Components'
-              icon={StarIconOutline}
+              title='Transactions'
+              icon={ListIconFill}
             />
             <BottomNavigationTab
               title='Themes'
