@@ -13,13 +13,7 @@ export class ListContainer extends React.Component<NavigationScreenProps> {
   public render(): React.ReactNode {
     return (
       <Showcase>
-        <ShowcaseSection title='Plain'>
-          <PlainList />
-        </ShowcaseSection>
-        <ShowcaseSection title='Icon'>
-          <IconList />
-        </ShowcaseSection>
-        <ShowcaseSection title='Accessory'>
+        <ShowcaseSection title='Transaction List'>
           <AccessoryList />
         </ShowcaseSection>
       </Showcase>

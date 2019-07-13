@@ -5,6 +5,8 @@ import {
   ListItem,
   ListItemProps,
   ListProps,
+  Button,
+  ButtonGroup
 } from '@kitten/ui';
 import { StarIconFill } from '@src/assets/icons';
 import { BottomEndTooltip } from '../../tooltip/showcase';
@@ -21,15 +23,17 @@ type ListItemElement = React.ReactElement<ListItemProps>;
 export const AccessoryList = (): ListElement => {
 
   const data: ListItemModel[] = Array(4).fill({
-    title: 'Title',
-    description: [
-      'Once upon a time when pigs spoke rhyme',
-      'and monkeys chewed tobacco...',
-    ].join(' '),
+    title: '-RM20',
+    description: '26/07/2019'
   });
 
   const renderAccessory = (): React.ReactElement<any> => {
-    return BottomEndTooltip({ indicatorOffset: 12 });
+    return (
+    <ButtonGroup size="small">
+      <Button size="small" >Edit</Button>
+      <Button size="small" >Delete</Button>
+    </ButtonGroup>
+      );
   };
 
   const renderItem = (info: ListRenderItemInfo<ListItemModel>): ListItemElement => {
