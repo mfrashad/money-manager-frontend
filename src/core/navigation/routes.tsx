@@ -54,9 +54,6 @@ import {
   ModalContainer,
 } from '@src/containers/components';
 import {
-  ArticlesNavigationOptions,
-  DashboardNavigationOptions,
-  EcommerceNavigationOptions,
   MenuNavigationOptions,
   SocialNavigationOptions,
 } from './options';
