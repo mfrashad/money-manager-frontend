@@ -10,7 +10,9 @@ import {
 import {
   HomeContainer,
   MenuContainer,
+  AddTransactionContainer,
   ThemesContainer,
+  ListTransactionContainer,
 } from '@src/containers/menu';
 import {
   AuthContainer,
@@ -18,13 +20,7 @@ import {
   SignIn2Container,
   SignUp2Container,
 } from '@src/containers/layouts/auth';
-import {
-  InputContainer,
-  ListContainer,
-} from '@src/containers/components';
-import {
-  MenuNavigationOptions,
-} from './options';
+import { MenuNavigationOptions } from './options';
 
 const AuthNavigationMap: NavigationRouteConfigMap = {
   ['Sign In 2']: SignIn2Container,
@@ -32,27 +28,10 @@ const AuthNavigationMap: NavigationRouteConfigMap = {
   ['Forgot Password']: ForgotPasswordContainer,
 };
 
-const ThemesNavigator: NavigationContainer = createStackNavigator(
-  {
-    ['Themes']: ThemesContainer,
-  }, {
-    defaultNavigationOptions: MenuNavigationOptions,
-  },
-);
-
-const LayoutsNavigator: NavigationContainer = createStackNavigator(
-  {
-    ['Layouts']: HomeContainer,
-    ['Auth']: AuthContainer,
-    ['Input']: InputContainer,
-  },
-  {
-    defaultNavigationOptions: MenuNavigationOptions,
-  },
-);
-
 const MenuNavigator: NavigationContainer = createBottomTabNavigator({
-  ['Layouts']: LayoutsNavigator,
+  ['Home']: HomeContainer,
+  ['List']: ListTransactionContainer,
+  ['Add']: AddTransactionContainer,
 }, {
   tabBarComponent: MenuContainer,
 });

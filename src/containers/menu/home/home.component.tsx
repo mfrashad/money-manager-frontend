@@ -25,7 +25,7 @@ class HomeComponent extends React.Component<Props> {
 
 
   private onPress = () => {
-    this.props.navigate('Input')
+    this.props.navigate('Add')
   };
 
   public render(): React.ReactNode {
