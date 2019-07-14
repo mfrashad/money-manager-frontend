@@ -4,7 +4,6 @@ import {
   NavigationParams,
   NavigationScreenProps,
 } from 'react-navigation';
-import { EcommerceHeader } from '@src/components/ecommerce';
 import { MenuContainer } from '@src/containers/menu';
 import { ArrowIosBackFill } from '@src/assets/icons';
 import { TopNavigationBar } from './components/topNavigationBar.component';
@@ -46,35 +45,6 @@ const MenuTopNavigationParams: TopNavigationParams = {
   },
 };
 
-const EcommerceMenuTopNavigationParams: TopNavigationParams = {
-  header: (props: NavigationScreenProps): TopNavigationElement => {
-    const state: NavigationRouteState = getCurrentRouteState(props.navigation);
-
-    const onBackPress = () => {
-      props.navigation.goBack(KEY_NAVIGATION_BACK);
-    };
-
-    const onSearchPress = () => {
-      Alert.alert('Search...');
-    };
-
-    const onShoppingCartPress = () => {
-      props.navigation.navigate({
-        key: state.routeName,
-        routeName: 'Shopping Cart',
-      });
-    };
-
-    return (
-      <EcommerceHeader
-        title={state.routeName}
-        onBack={onBackPress}
-        onSearch={onSearchPress}
-        onShoppingCart={onShoppingCartPress}
-      />
-    );
-  },
-};
 
 const MenuBottomNavigationParams: BottomNavigationParams = {
   bottomNavigation: (props: NavigationScreenProps): BottomNavigationElement => {
@@ -94,5 +64,3 @@ export const SocialNavigationOptions: NavigationParams = MenuTopNavigationParams
 export const ArticlesNavigationOptions: NavigationParams = MenuTopNavigationParams;
 
 export const DashboardNavigationOptions: NavigationParams = MenuTopNavigationParams;
-
-export const EcommerceNavigationOptions: NavigationParams = EcommerceMenuTopNavigationParams;

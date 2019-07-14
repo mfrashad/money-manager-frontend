@@ -16,15 +16,8 @@ import {
 import {
   AuthContainer,
   ForgotPasswordContainer,
-  SignIn1Container,
   SignIn2Container,
-  SignIn3Container,
-  SignIn4Container,
-  SignIn5Container,
-  SignUp1Container,
   SignUp2Container,
-  SignUp3Container,
-  SignUp4Container,
 } from '@src/containers/layouts/auth';
 import {
   Feed1Container,
