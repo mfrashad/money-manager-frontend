@@ -20,22 +20,6 @@ import {
   SignUp2Container,
 } from '@src/containers/layouts/auth';
 import {
-  Feed1Container,
-  Feed2Container,
-  Profile1Container,
-  Profile2Container,
-  Profile3Container,
-  Profile4Container,
-  Profile5Container,
-  Profile6Container,
-  Profile7Container,
-  ProfileSettings1Container,
-  ProfileSettings2Container,
-  ProfileSettings3Container,
-  SettingsContainer,
-  SocialContainer,
-} from '@src/containers/layouts/social';
-import {
   AvatarContainer,
   BottomNavigationContainer,
   ButtonContainer,
@@ -55,62 +39,7 @@ import {
 } from '@src/containers/components';
 import {
   MenuNavigationOptions,
-  SocialNavigationOptions,
 } from './options';
-
-const SocialNavigationMap: NavigationRouteConfigMap = {
-  ['Profile 1']: {
-    screen: Profile1Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Profile 2']: {
-    screen: Profile2Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Profile 3']: {
-    screen: Profile3Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Profile 4']: {
-    screen: Profile4Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Profile 5']: {
-    screen: Profile5Container,
-  },
-  ['Profile 6']: {
-    screen: Profile6Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Profile 7']: {
-    screen: Profile7Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Profile Settings 1']: {
-    screen: ProfileSettings1Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Profile Settings 2']: {
-    screen: ProfileSettings2Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Profile Settings 3']: {
-    screen: ProfileSettings3Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Feed 1']: {
-    screen: Feed1Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Feed 2']: {
-    screen: Feed2Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Settings']: {
-    screen: SettingsContainer,
-    navigationOptions: SocialNavigationOptions,
-  },
-};
 
 const AuthNavigationMap: NavigationRouteConfigMap = {
   ['Sign In 2']: SignIn2Container,
@@ -173,7 +102,6 @@ const MenuNavigator: NavigationContainer = createBottomTabNavigator({
 const AppNavigator: NavigationContainer = createStackNavigator({
   //...AuthNavigationMap,
   ['Home']:MenuNavigator,
-  ...SocialNavigationMap,
 }, {
   headerMode: 'screen',
   defaultNavigationOptions: {

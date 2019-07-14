@@ -10,9 +10,7 @@ import {
   Text,
 } from '@kitten/ui';
 import {
-  ProfileInfo1,
   ProfileParameterCard,
-  ProfileSocials,
 } from '@src/components/social';
 import {
   ContainerView,
@@ -23,10 +21,6 @@ import {
   ArrowHeadDownIconFill,
   ArrowHeadUpIconFill,
 } from '@src/assets/icons';
-import {
-  Profile as ProfileModel,
-  ProfileSocials as ProfileSocialsModel,
-} from '@src/core/model';
 
 interface ComponentProps {
   // profile: ProfileModel;
