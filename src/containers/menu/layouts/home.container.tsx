@@ -2,9 +2,9 @@ import React from 'react';
 import { NavigationScreenProps } from 'react-navigation';
 import { Layouts } from './layouts.component';
 
-export class LayoutsContainer extends React.Component<NavigationScreenProps> {
+export class HomeContainer extends React.Component<NavigationScreenProps> {
 
-  private navigationKey: string = 'LayoutsContainer';
+  private navigationKey: string = 'HomeContainer';
 
   private navigate = (route: string) => {
     this.props.navigation.navigate({

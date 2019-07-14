@@ -8,7 +8,7 @@ import {
   NavigationRouteConfigMap,
 } from 'react-navigation';
 import {
-  LayoutsContainer,
+  HomeContainer,
   MenuContainer,
   ThemesContainer,
 } from '@src/containers/menu';
@@ -42,7 +42,7 @@ const ThemesNavigator: NavigationContainer = createStackNavigator(
 
 const LayoutsNavigator: NavigationContainer = createStackNavigator(
   {
-    ['Layouts']: LayoutsContainer,
+    ['Layouts']: HomeContainer,
     ['Auth']: AuthContainer,
     ['Input']: InputContainer,
   },
