@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableOpacity, TimePickerAndroid } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import {  Button, Input } from 'react-native-ui-kitten';
 import { NavigationScreenProps } from 'react-navigation';
 import {
@@ -8,24 +8,7 @@ import {
   withStyles,
 } from '@kitten/theme';
 import DateTimePicker from "react-native-modal-datetime-picker";
-import { Showcase } from '../common/showcase.component';
-import { ShowcaseSection } from '../common/showcaseSection.component';
-import { ShowcaseItem } from '../common/showcaseItem.component';
-import {
-  CaptionIconInput,
-  CaptionInput,
-  DangerInput,
-  DefaultInput,
-  DisabledInput,
-  IconInput,
-  InfoInput,
-  LabelInput,
-  PrimaryInput,
-  SuccessInput,
-  WarningInput,
-} from './showcase';
 import { textStyle } from '@src/components/common';
-import { string } from 'prop-types';
 
 type InputContainerProps = ThemedComponentProps & NavigationScreenProps;
 interface State {

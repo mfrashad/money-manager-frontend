@@ -32,7 +32,6 @@ const pieChartData = [
 ];
 
 interface ComponentProps {
-  data: LayoutsData[];
   navigate: (route: string) => void;
 }
 
@@ -46,7 +45,7 @@ class LayoutsComponent extends React.Component<Props> {
   };
 
   public render(): React.ReactNode {
-    const { themedStyle, data } = this.props;
+    const { themedStyle } = this.props;
 
     return (
       <ScrollView style={themedStyle.contentContainer}>
