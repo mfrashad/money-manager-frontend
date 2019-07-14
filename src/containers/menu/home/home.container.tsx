@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavigationScreenProps } from 'react-navigation';
-import { Layouts } from './layouts.component';
+import { Home } from './home.component';
 
 export class HomeContainer extends React.Component<NavigationScreenProps> {
 
@@ -15,7 +15,7 @@ export class HomeContainer extends React.Component<NavigationScreenProps> {
 
   public render(): React.ReactNode {
     return (
-      <Layouts
+      <Home
         navigation={this.props.navigation}
         navigate={this.navigate}
       />

@@ -35,7 +35,7 @@ interface ComponentProps {
 
 type Props = ThemedComponentProps & ComponentProps & NavigationScreenProps;
 
-class LayoutsComponent extends React.Component<Props> {
+class HomeComponent extends React.Component<Props> {
 
 
   private onPress = () => {
@@ -108,7 +108,7 @@ class LayoutsComponent extends React.Component<Props> {
   }
 }
 
-export const Layouts = withStyles(LayoutsComponent, (theme: ThemeType) => ({
+export const Home = withStyles(HomeComponent, (theme: ThemeType) => ({
   container: {
     flex: 1,
     backgroundColor: theme['background-basic-color-2'],
