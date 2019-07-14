@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "Kitten Tricks",
+    "name": "Money Manager",
     "icon": "./src/assets/icons/icon.png",
     "version": "2.0.1",
-    "slug": "kittenTricks",
+    "slug": "moneyManager",
     "sdkVersion": "33.0.0",
     "privacy": "public",
     "orientation": "portrait",
