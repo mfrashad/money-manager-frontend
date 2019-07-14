@@ -53,7 +53,6 @@ const LayoutsNavigator: NavigationContainer = createStackNavigator(
 
 const MenuNavigator: NavigationContainer = createBottomTabNavigator({
   ['Layouts']: LayoutsNavigator,
-  ['Components']: ListContainer,
 }, {
   tabBarComponent: MenuContainer,
 });
