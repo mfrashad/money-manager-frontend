@@ -56,7 +56,7 @@ export const imageProfile3: ImageSource = {
   imageSource: require('./source/image-profile-3.jpg'),
 };
 
-export const imageProfile4: ImageSource = {
+export const imageInfoCard: ImageSource = {
   imageSource: require('./source/image-profile-4.jpg'),
 };
 
@@ -191,7 +191,7 @@ export const imageProfile2Layout: ImageSource = {
 export const imageProfile3Layout: ImageSource = {
   imageSource: require('./source/image-layout-profile-3.jpg'),
 };
-export const imageProfile4Layout: ImageSource = {
+export const imageInfoCardLayout: ImageSource = {
   imageSource: require('./source/image-layout-profile-4.jpg'),
 };
 

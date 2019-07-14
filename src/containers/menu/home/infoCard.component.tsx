@@ -32,9 +32,9 @@ interface ComponentProps {
   // onRateChange: (value: number) => void;
 }
 
-export type Profile4Props = ThemedComponentProps & ComponentProps;
+export type InfoCardProps = ThemedComponentProps & ComponentProps;
 
-class Profile4Component extends React.Component<Profile4Props> {
+class InfoCardComponent extends React.Component<InfoCardProps> {
 
   public render(): React.ReactNode {
     const { themedStyle } = this.props;
@@ -58,7 +58,7 @@ class Profile4Component extends React.Component<Profile4Props> {
   }
 }
 
-export const Profile4 = withStyles(Profile4Component, (theme: ThemeType) => ({
+export const InfoCard = withStyles(InfoCardComponent, (theme: ThemeType) => ({
   container: {
     flex: 1,
     backgroundColor: theme['background-basic-color-2'],

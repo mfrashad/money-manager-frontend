@@ -13,7 +13,7 @@ import {
   StackedBarChart
 } from 'react-native-chart-kit'
 import { ScrollView, StatusBar, Dimensions, Text, View } from 'react-native'
-import { Profile4 } from './profile4.component';
+import { InfoCard } from './infoCard.component';
 import { PlusIconFill } from '@src/assets/icons';
 import {
   Button,
@@ -48,7 +48,7 @@ class HomeComponent extends React.Component<Props> {
     return (
       <ScrollView style={themedStyle.contentContainer}>
         <Button icon={PlusIconFill} style={themedStyle.button} size="giant" onPress={this.onPress}>Add Transaction</Button>
-        <Profile4 />
+        <InfoCard />
         <View style={themedStyle.chartContainer}>
         <Text>
           Bezier Line Chart
