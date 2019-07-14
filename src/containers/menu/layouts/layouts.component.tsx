@@ -14,8 +14,6 @@ import {
 } from 'react-native-chart-kit'
 import { ScrollView, StatusBar, Dimensions, Text, View } from 'react-native'
 import { Profile4 } from './profile4.component';
-import { LayoutsList } from '@src/components/menu';
-import { LayoutsData } from './type';
 import { PlusIconFill } from '@src/assets/icons';
 import {
   Button,

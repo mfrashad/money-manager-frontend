@@ -14,16 +14,6 @@ import {
   ThemesContainer,
 } from '@src/containers/menu';
 import {
-  Article1Container,
-  Article2Container,
-  Article3Container,
-  ArticleList1Container,
-  ArticleList2Container,
-  ArticleList3Container,
-  ArticleList4Container,
-  ArticlesContainer,
-} from '@src/containers/layouts/articles';
-import {
   AuthContainer,
   ForgotPasswordContainer,
   SignIn1Container,
@@ -36,29 +26,6 @@ import {
   SignUp3Container,
   SignUp4Container,
 } from '@src/containers/layouts/auth';
-import {
-  DashboardsContainer,
-  Trainings1Container,
-  Trainings2Container,
-} from '@src/containers/layouts/dashboards';
-import {
-  AddNewCardContainer,
-  BookDetailsContainer,
-  EcommerceContainer,
-  MovieDetailsContainer,
-  PaymentContainer,
-  ProductDetailsContainer,
-  ProductsListContainer,
-  RentApartmentContainer,
-  ShoppingCartContainer,
-} from '@src/containers/layouts/ecommerce';
-import {
-  Chat1Container,
-  Chat2Container,
-  Chat3Container,
-  ConversationsListContainer,
-  MessagingContainer,
-} from '@src/containers/layouts/messaging';
 import {
   Feed1Container,
   Feed2Container,
@@ -100,94 +67,6 @@ import {
   MenuNavigationOptions,
   SocialNavigationOptions,
 } from './options';
-
-const EcommerceNavigationMap: NavigationRouteConfigMap = {
-  ['Add New Card']: {
-    screen: AddNewCardContainer,
-    navigationOptions: EcommerceNavigationOptions,
-  },
-  ['Payment']: {
-    screen: PaymentContainer,
-    navigationOptions: EcommerceNavigationOptions,
-  },
-  ['Products List']: {
-    screen: ProductsListContainer,
-    navigationOptions: EcommerceNavigationOptions,
-  },
-  ['Product Details']: {
-    screen: ProductDetailsContainer,
-    navigationOptions: EcommerceNavigationOptions,
-  },
-  ['Shopping Cart']: {
-    screen: ShoppingCartContainer,
-    navigationOptions: EcommerceNavigationOptions,
-  },
-  ['Rent Apartment']: {
-    screen: RentApartmentContainer,
-    navigationOptions: EcommerceNavigationOptions,
-  },
-  ['Movie Details']: {
-    screen: MovieDetailsContainer,
-    navigationOptions: EcommerceNavigationOptions,
-  },
-  ['Book Details']: {
-    screen: BookDetailsContainer,
-    navigationOptions: EcommerceNavigationOptions,
-  },
-};
-
-const DarhboardsNavigationMap: NavigationRouteConfigMap = {
-  ['Trainings 1']: {
-    screen: Trainings1Container,
-    navigationOptions: DashboardNavigationOptions,
-  },
-  ['Trainings 2']: {
-    screen: Trainings2Container,
-    navigationOptions: DashboardNavigationOptions,
-  },
-};
-
-const MessagingNavigationMap: NavigationRouteConfigMap = {
-  ['Conversations List']: ConversationsListContainer,
-  ['Chat 1']: Chat1Container,
-  ['Chat 2']: Chat2Container,
-  ['Chat 3']: Chat3Container,
-  ['Test Profile']: {
-    screen: Profile1Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-};
-
-const ArticlesNavigationMap: NavigationRouteConfigMap = {
-  ['Article List 1']: {
-    screen: ArticleList1Container,
-    navigationOptions: ArticlesNavigationOptions,
-  },
-  ['Article List 2']: {
-    screen: ArticleList2Container,
-    navigationOptions: ArticlesNavigationOptions,
-  },
-  ['Article List 3']: {
-    screen: ArticleList3Container,
-    navigationOptions: ArticlesNavigationOptions,
-  },
-  ['Article List 4']: {
-    screen: ArticleList4Container,
-    navigationOptions: ArticlesNavigationOptions,
-  },
-  ['Article 1']: {
-    screen: Article1Container,
-    navigationOptions: ArticlesNavigationOptions,
-  },
-  ['Article 2']: {
-    screen: Article2Container,
-    navigationOptions: ArticlesNavigationOptions,
-  },
-  ['Article 3']: {
-    screen: Article3Container,
-    navigationOptions: ArticlesNavigationOptions,
-  },
-};
 
 const SocialNavigationMap: NavigationRouteConfigMap = {
   ['Profile 1']: {
@@ -305,10 +184,6 @@ const AppNavigator: NavigationContainer = createStackNavigator({
   //...AuthNavigationMap,
   ['Home']:MenuNavigator,
   ...SocialNavigationMap,
-  ...ArticlesNavigationMap,
-  ...MessagingNavigationMap,
-  ...DarhboardsNavigationMap,
-  ...EcommerceNavigationMap,
 }, {
   headerMode: 'screen',
   defaultNavigationOptions: {
