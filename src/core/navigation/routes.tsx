@@ -8,7 +8,6 @@ import {
   NavigationRouteConfigMap,
 } from 'react-navigation';
 import {
-  ComponentsContainer,
   LayoutsContainer,
   MenuContainer,
   ThemesContainer,
@@ -20,22 +19,8 @@ import {
   SignUp2Container,
 } from '@src/containers/layouts/auth';
 import {
-  AvatarContainer,
-  BottomNavigationContainer,
-  ButtonContainer,
-  ButtonGroupContainer,
-  CheckBoxContainer,
   InputContainer,
   ListContainer,
-  OverflowMenuContainer,
-  PopoverContainer,
-  RadioContainer,
-  TabViewContainer,
-  TextContainer,
-  ToggleContainer,
-  TooltipContainer,
-  TopNavigationContainer,
-  ModalContainer,
 } from '@src/containers/components';
 import {
   MenuNavigationOptions,
@@ -51,31 +36,6 @@ const ThemesNavigator: NavigationContainer = createStackNavigator(
   {
     ['Themes']: ThemesContainer,
   }, {
-    defaultNavigationOptions: MenuNavigationOptions,
-  },
-);
-
-const ComponentsNavigator: NavigationContainer = createStackNavigator(
-  {
-    ['Components']: ComponentsContainer,
-    ['Button']: ButtonContainer,
-    ['Button Group']: ButtonGroupContainer,
-    ['CheckBox']: CheckBoxContainer,
-    ['Toggle']: ToggleContainer,
-    ['Radio']: RadioContainer,
-    ['Input']: InputContainer,
-    ['Text']: TextContainer,
-    ['Avatar']: AvatarContainer,
-    ['Tab View']: TabViewContainer,
-    ['Popover']: PopoverContainer,
-    ['Tooltip']: TooltipContainer,
-    ['Overflow Menu']: OverflowMenuContainer,
-    ['List']: ListContainer,
-    ['Top Navigation']: TopNavigationContainer,
-    ['Bottom Navigation']: BottomNavigationContainer,
-    ['Modal']: ModalContainer,
-  },
-  {
     defaultNavigationOptions: MenuNavigationOptions,
   },
 );
