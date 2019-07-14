@@ -20,6 +20,7 @@ import { PlusIconFill } from '@src/assets/icons';
 import {
   Button,
 } from 'react-native-ui-kitten';
+import { NavigationScreenProps } from 'react-navigation';
 
 const MARGIN = 12;
 
@@ -32,15 +33,16 @@ const pieChartData = [
 
 interface ComponentProps {
   data: LayoutsData[];
-  onItemSelect: (index: number) => void;
+  navigate: (route: string) => void;
 }
 
-type Props = ThemedComponentProps & ComponentProps;
+type Props = ThemedComponentProps & ComponentProps & NavigationScreenProps;
 
 class LayoutsComponent extends React.Component<Props> {
 
-  private onItemPress = (index: number) => {
-    this.props.onItemSelect(index);
+
+  private onPress = () => {
+    this.props.navigate('Input')
   };
 
   public render(): React.ReactNode {
@@ -48,7 +50,7 @@ class LayoutsComponent extends React.Component<Props> {
 
     return (
       <ScrollView style={themedStyle.contentContainer}>
-        <Button icon={PlusIconFill} style={themedStyle.button} size="giant">Add Transaction</Button>
+        <Button icon={PlusIconFill} style={themedStyle.button} size="giant" onPress={this.onPress}>Add Transaction</Button>
         <Profile4 />
         <View style={themedStyle.chartContainer}>
         <Text>

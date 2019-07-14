@@ -286,11 +286,7 @@ const LayoutsNavigator: NavigationContainer = createStackNavigator(
   {
     ['Layouts']: LayoutsContainer,
     ['Auth']: AuthContainer,
-    ['Social']: SocialContainer,
-    ['Articles']: ArticlesContainer,
-    ['Messaging']: MessagingContainer,
-    ['Dashboards']: DashboardsContainer,
-    ['Ecommerce']: EcommerceContainer,
+    ['Input']: InputContainer,
   },
   {
     defaultNavigationOptions: MenuNavigationOptions,

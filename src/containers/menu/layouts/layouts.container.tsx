@@ -9,20 +9,19 @@ export class LayoutsContainer extends React.Component<NavigationScreenProps> {
   private data: LayoutsContainerData[] = routes;
   private navigationKey: string = 'LayoutsContainer';
 
-  private onItemSelect = (index: number) => {
-    const { [index]: selectedItem } = this.data;
-
+  private navigate = (route: string) => {
     this.props.navigation.navigate({
       key: this.navigationKey,
-      routeName: selectedItem.route,
+      routeName: route,
     });
   };
 
   public render(): React.ReactNode {
     return (
       <Layouts
+        navigation={this.props.navigation}
         data={this.data}
-        onItemSelect={this.onItemSelect}
+        navigate={this.navigate}
       />
     );
   }
