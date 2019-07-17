@@ -43,11 +43,11 @@ export const AccessoryList = (props) => {
 //     }
 // ]
 
-  const renderAccessory = (): React.ReactElement<any> => {
+  const renderAccessory = (id) => () => {
     return (
     <ButtonGroup size="small">
       <Button size="small" >Edit</Button>
-      <Button size="small" >Delete</Button>
+      <Button size="small" onPress={props.onItemDelete(id)} >Delete</Button>
     </ButtonGroup>
       );
   };
@@ -62,7 +62,7 @@ export const AccessoryList = (props) => {
         title={title}
         description={description}
         icon={StarIconFill}
-        accessory={renderAccessory}
+        accessory={renderAccessory(id)}
       />
     );
   };

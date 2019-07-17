@@ -14,7 +14,7 @@ export class ListContainer extends React.Component<any> {
     return (
       <Showcase>
         <ShowcaseSection title='Transaction List'>
-          <AccessoryList data={this.props.data} />
+          <AccessoryList data={this.props.data} onItemDelete={this.props.onItemDelete} />
         </ShowcaseSection>
       </Showcase>
     );

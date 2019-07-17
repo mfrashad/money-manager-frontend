@@ -20,13 +20,22 @@ export class ListTransactionContainer extends React.Component<NavigationScreenPr
     });
   }
 
+  private onItemDelete = (id) => () => {
+    return fetch(`https://mfrashad-money-manager.herokuapp.com/transactions/${id}.json`, {
+      method: 'DELETE'
+    }).then((response)=>{
+      console.log('Deleted')
+      this.fetchTransactions()
+    })
+  }
+
   public componentDidMount() {
     this.fetchTransactions()
   }
 
   public render(): React.ReactNode {
     return (
-      <ListContainer navigation={this.props.navigation} data={this.state.data} />
+      <ListContainer navigation={this.props.navigation} data={this.state.data} onItemDelete={this.onItemDelete} />
     );
   }
 }
