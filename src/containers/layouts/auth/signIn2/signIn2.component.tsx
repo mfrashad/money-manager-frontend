@@ -17,6 +17,7 @@ import {
   textStyle,
 } from '@src/components/common';
 import { View } from 'react-native';
+import { string } from 'prop-types';
 
 interface ComponentProps {
   onSignInPress: (formData: SignInForm2Data) => void;
@@ -51,6 +52,14 @@ class SignIn2Component extends React.Component<SignIn2Props> {
   private onFormDataChange = (formData: SignInForm2Data) => {
     this.setState({ formData });
   };
+
+  private onEmailChange = (email) => {
+    this.setState({email})
+  }
+
+  private onPasswordChange = (password) => {
+    this.setState({password})
+  }
 
   public render(): React.ReactNode {
     const { themedStyle } = this.props;

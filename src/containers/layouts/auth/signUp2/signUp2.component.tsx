@@ -3,6 +3,7 @@ import {
   ButtonProps,
   ImageProps,
   View,
+  StyleSheet,
 } from 'react-native';
 import {
   StyleType,
@@ -10,12 +11,11 @@ import {
   ThemeType,
   withStyles,
 } from '@kitten/theme';
-import { Button } from '@kitten/ui';
+import { Button, Text } from '@kitten/ui';
 import {
   SignUpForm2,
   SignUpForm2Data,
 } from '@src/components/auth';
-import { ProfilePhoto } from '@src/components/social';
 import {
   ScrollableAvoidKeyboard,
   textStyle,
@@ -82,12 +82,7 @@ class SignUp2Component extends React.Component<SignUp2Props, State> {
     return (
       <ScrollableAvoidKeyboard style={themedStyle.container}>
         <View style={themedStyle.headerContainer}>
-          <ProfilePhoto
-            style={themedStyle.photo}
-            resizeMode='center'
-            source={{ uri: 'https://akveo.github.io/eva-icons/fill/png/128/person.png' }}
-            button={this.renderPhotoButton}
-          />
+          <Text style={themedStyle.headerText}>Registration</Text>
         </View>
         <SignUpForm2
           style={themedStyle.formContainer}
@@ -118,6 +113,11 @@ export const SignUp2 = withStyles(SignUp2Component, (theme: ThemeType) => ({
   container: {
     flex: 1,
     backgroundColor: ['background-basic-color-1'],
+  },
+  headerText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white'
   },
   headerContainer: {
     justifyContent: 'center',

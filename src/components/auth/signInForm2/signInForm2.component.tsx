@@ -18,6 +18,7 @@ import {
   PersonIconFill,
 } from '@src/assets/icons';
 import {
+  EmailValidator,
   NameValidator,
   PasswordValidator,
 } from '@src/core/validators';
@@ -93,9 +94,9 @@ class SignInForm2Component extends React.Component<SignInForm2Props, State> {
         <View style={themedStyle.formContainer}>
           <ValidationInput
             textStyle={textStyle.paragraph}
-            placeholder='User Name'
+            placeholder='Email'
             icon={PersonIconFill}
-            validator={NameValidator}
+            validator={EmailValidator}
             onChangeText={this.onUsernameInputTextChange}
           />
           <ValidationInput
