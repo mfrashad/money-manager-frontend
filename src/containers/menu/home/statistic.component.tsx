@@ -28,6 +28,8 @@ import {
 
 const MARGIN = 12;
 
+const pieColor = ['#A3BDFF','#88a8ff','#6c93ff','#517dff', '#314dff']
+
 const pieChartData = [
   { name: 'Food', category: 200, color: '#A3BDFF', legendFontColor: '#FFF', legendFontSize: 15 },
   { name: 'Petrol', category: 30, color: '#88a8ff', legendFontColor: '#FFF', legendFontSize: 15 },
@@ -36,7 +38,7 @@ const pieChartData = [
 ];
 
 const lineChartData = {
-  labels: ['January', 'February', 'March', 'April', 'May'],
+  labels: ['March', 'April', 'May', 'June', 'July'],
   datasets: [{
     data: [
       Math.random() * 100,
@@ -67,11 +69,59 @@ interface ComponentProps {
   // onFollowingPress: () => void;
   // onPostsPress: () => void;
   // onRateChange: (value: number) => void;
+  pieChartData: any,
+  lineChartData: any,
 }
+
+//Data shape
+// {
+//   "date":[["August",100.0],["July",90.0]],
+//   "category":[["food",150.0],["others",40.0]],
+//   "total":{"expense":190.0}
+// }
 
 export type StatisticProps = ThemedComponentProps & ComponentProps;
 
 class StatisticComponent extends React.Component<StatisticProps> {
+
+  public state = {
+    pieChartData: pieChartData,
+    lineChartData: lineChartData
+  }
+
+  private fetchStatistic = () => {
+    return fetch('https://mfrashad-money-manager.herokuapp.com/statistic/1')
+    .then((response) => response.json())
+    .then((responseJson) => {
+      console.log(responseJson)
+      let newPieChartData = []
+      let newLineChartData = {
+        labels: [], 
+        datasets: [{
+            data: []
+          }]
+      }
+      responseJson.category.forEach((e,i) => {
+        newPieChartData.push({name: e[0], category: e[1], color: pieColor[i], legendFontColor: '#FFF', legendFontSize: 15})
+        
+      });
+
+      responseJson.date.forEach((e,i) => {
+          console.log(e)
+          newLineChartData.labels.push(e[0])
+          newLineChartData.datasets[0].data.push(e[1])
+      })
+
+      this.setState({pieChartData: newPieChartData, lineChartData: newLineChartData})
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  }
+
+  public componentDidMount() {
+    this.fetchStatistic()
+  }
 
   public render(): React.ReactNode {
     const { themedStyle } = this.props;
@@ -82,7 +132,7 @@ class StatisticComponent extends React.Component<StatisticProps> {
           Monthly Expense
         </Text>
         <LineChart
-          data={lineChartData}
+          data={this.state.lineChartData}
           width={Dimensions.get('window').width - MARGIN*2} // from react-native
           height={220}
           yAxisLabel={'$'}
@@ -94,7 +144,7 @@ class StatisticComponent extends React.Component<StatisticProps> {
           }}
         />
         <PieChart
-          data={pieChartData}
+          data={this.state.pieChartData}
           width={Dimensions.get('window').width - MARGIN*2} // from react-native
           height={200}
           chartConfig={chartConfig}

@@ -30,11 +30,32 @@ interface ComponentProps {
   // onFollowingPress: () => void;
   // onPostsPress: () => void;
   // onRateChange: (value: number) => void;
+  income: any,
+  expense: any,
 }
 
 export type InfoCardProps = ThemedComponentProps & ComponentProps;
 
 class InfoCardComponent extends React.Component<InfoCardProps> {
+
+  public state = {
+    income: 0,
+    expense: 0
+  }
+
+  private fetchTotal = () => {
+    return fetch('https://mfrashad-money-manager.herokuapp.com/statistic/1')
+    .then((response) => response.json())
+    .then((responseJson) => {
+      console.log(responseJson)
+      const { income, expense } = responseJson.total
+      this.setState({income: income ? income : 0, expense: expense ? expense : 0})
+    })
+  }
+
+  public componentDidMount() {
+    this.fetchTotal()
+  }
 
   public render(): React.ReactNode {
     const { themedStyle } = this.props;
@@ -44,13 +65,13 @@ class InfoCardComponent extends React.Component<InfoCardProps> {
           <ProfileParameterCard
             style={themedStyle.profileParameter}
             hint='Income'
-            value={`RM123.00`}
+            value={`RM${this.state.income}`}
             icon={ArrowHeadUpIconFill}
           />
           <ProfileParameterCard
             style={themedStyle.profileParameter}
             hint='Expense'
-            value={`RM59.00`}
+            value={`RM${this.state.expense}`}
             icon={ArrowHeadDownIconFill}
           />
         </View>
