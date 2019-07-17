@@ -8,13 +8,13 @@ import {
   PlainList,
 } from './showcase';
 
-export class ListContainer extends React.Component<NavigationScreenProps> {
+export class ListContainer extends React.Component<any> {
 
   public render(): React.ReactNode {
     return (
       <Showcase>
         <ShowcaseSection title='Transaction List'>
-          <AccessoryList />
+          <AccessoryList data={this.props.data} />
         </ShowcaseSection>
       </Showcase>
     );
