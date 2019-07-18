@@ -46,7 +46,7 @@ export const AccessoryList = (props) => {
   const renderAccessory = (id) => () => {
     return (
     <ButtonGroup size="small">
-      <Button size="small" >Edit</Button>
+      <Button size="small" onPress={props.onItemEdit(id)}>Edit</Button>
       <Button size="small" onPress={props.onItemDelete(id)} >Delete</Button>
     </ButtonGroup>
       );

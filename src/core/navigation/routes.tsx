@@ -11,6 +11,7 @@ import {
   HomeContainer,
   MenuContainer,
   AddTransactionContainer,
+  EditTransactionContainer,
   ThemesContainer,
   ListTransactionContainer,
 } from '@src/containers/menu';
@@ -32,12 +33,13 @@ const MenuNavigator: NavigationContainer = createBottomTabNavigator({
   ['Home']: HomeContainer,
   ['List']: ListTransactionContainer,
   ['Add']: AddTransactionContainer,
+  ['Edit']: EditTransactionContainer
 }, {
   tabBarComponent: MenuContainer,
 });
 
 const AppNavigator: NavigationContainer = createStackNavigator({
-  ...AuthNavigationMap,
+  //...AuthNavigationMap,
   ['Home']:MenuNavigator,
 }, {
   headerMode: 'screen',

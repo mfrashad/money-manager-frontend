@@ -29,13 +29,35 @@ export class ListTransactionContainer extends React.Component<NavigationScreenPr
     })
   }
 
+  private onItemEdit = (id) => () => {
+    fetch(`https://mfrashad-money-manager.herokuapp.com/transactions/${id}.json`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data)
+      const {id, user_id, amount, date, time, role, category} = data
+      this.props.navigation.navigate('Edit', {
+        id,
+        user_id,
+        amount,
+        date,
+        time,
+        type: role,
+        category
+      })
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+    
+  }
+ 
   public componentDidMount() {
     this.fetchTransactions()
   }
 
   public render(): React.ReactNode {
     return (
-      <ListContainer navigation={this.props.navigation} data={this.state.data} onItemDelete={this.onItemDelete} />
+      <ListContainer navigation={this.props.navigation} data={this.state.data} onItemEdit={this.onItemEdit} onItemDelete={this.onItemDelete} />
     );
   }
 }
