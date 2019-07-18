@@ -39,7 +39,7 @@ const MenuNavigator: NavigationContainer = createBottomTabNavigator({
 });
 
 const AppNavigator: NavigationContainer = createStackNavigator({
-  //...AuthNavigationMap,
+  ...AuthNavigationMap,
   ['Home']:MenuNavigator,
 }, {
   headerMode: 'screen',
