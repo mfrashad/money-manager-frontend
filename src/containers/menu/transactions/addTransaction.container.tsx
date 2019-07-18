@@ -79,7 +79,7 @@ class AddTransactionComponent extends React.Component<AddTransactionProps, State
       })
     }).then((response)=>{
       console.log(response)
-      this.props.navigation.navigate('List')
+      this.props.navigation.navigate('List', {token: Math.random()})
     })
   }
 

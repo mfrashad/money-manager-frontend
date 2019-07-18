@@ -5,6 +5,7 @@ import { ListContainer } from '@src/containers/components/list/list.container';
 export class ListTransactionContainer extends React.Component<NavigationScreenProps> {
 
   public state = {
+    token: this.props.navigation.getParam('token'),
     data: []
   }
 
@@ -53,6 +54,12 @@ export class ListTransactionContainer extends React.Component<NavigationScreenPr
  
   public componentDidMount() {
     this.fetchTransactions()
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.navigation.state.params.token) {
+      this.fetchTransactions();
+    }
   }
 
   public render(): React.ReactNode {

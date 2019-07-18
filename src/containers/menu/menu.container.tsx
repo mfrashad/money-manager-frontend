@@ -13,6 +13,7 @@ export class MenuContainer extends React.Component<NavigationScreenProps> {
     this.props.navigation.navigate({
       key: this.navigationKey,
       routeName: selectedRoute.routeName,
+      params: {token: Math.random()}
     });
   };
 
