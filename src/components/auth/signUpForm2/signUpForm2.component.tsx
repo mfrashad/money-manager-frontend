@@ -106,7 +106,7 @@ class SignUpForm2Component extends React.Component<SignUpForm2Props, State> {
             style={themedStyle.usernameInput}
             textStyle={textStyle.paragraph}
             autoCapitalize='none'
-            placeholder='User Name'
+            placeholder='Name'
             icon={PersonIconFill}
             validator={NameValidator}
             onChangeText={this.onUsernameInputTextChange}
